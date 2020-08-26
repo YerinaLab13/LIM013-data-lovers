@@ -5,8 +5,11 @@
     
     .body{
     display: flex;
+    background: rosybrown;
     }
     
     .rootTitle{
     text-align: center;
     }
+
+    
