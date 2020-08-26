@@ -5,11 +5,9 @@
     
     .body{
     display: flex;
-    background: rosybrown;
+    /*background: rosybrown;*/
     }
     
     .rootTitle{
     text-align: center;
     }
-
-    
