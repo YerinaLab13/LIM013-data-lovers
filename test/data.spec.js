@@ -1,17 +1,130 @@
-import { example, anotherExample } from '../src/data.js';
+import { filteredPokemon, orderPokemonUpward } from '../src/data.js';
+const testPokemon = {
+  "pokemon":[ 
+    { 
+      "name": "charizard",
+      "type": [
+        "fire",
+        "flying"]
+    },
+    {
+      "name": "squirtle",
+      "type": [
+        "water"]
+    },
+    { 
+      "name": "bulbasaur",
+      "type": [
+        "grass",
+        "poison"]
+    }
+    
+]
+ };
 
+ const grassPokemon = [ 
+  { 
+    "name": "bulbasaur",
+    "type": [
+      "grass",
+      "poison"]
+    }];
 
-describe('example', () => {
+const pokemonAbc = {
+  "pokemon":[ 
+    { 
+      "name": "bulbasaur",
+      "type": [
+        "grass",
+        "poison"]
+    },
+    { 
+      "name": "charizard",
+      "type": [
+        "fire",
+        "flying"]
+    },
+    {
+      
+      "name": "squirtle",
+      "type": [
+        "water"]
+    }
+]
+ };
+
+ /*
+ const pokemonZwy = {
+  "pokemon":[ 
+    {
+      
+      "name": "squirtle",
+      "type": [
+        "water"]
+    },
+    { 
+      "name": "charizard",
+      "type": [
+        "fire",
+        "flying"]
+    },
+    { 
+      "name": "bulbasaur",
+      "type": [
+        "grass",
+        "poison"]
+    }
+
+]
+ };
+*/
+
+describe('filteredPokemon', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filteredPokemon).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('returns `filteredPokemon`', () => {
+    expect(filteredPokemon(testPokemon.pokemon,'grass')).toEqual(grassPokemon); //(expect.arrayContaining(expected)({'name':'bulbasaur','type':['grass','poison']}));
   });
 });
 
 
+describe('orderPokemonUpward', () => {
+  it('is a function', () => {
+    expect(typeof orderPokemonUpward).toBe('function');
+  });
+
+  it('returns `orderPokemonUpward`', () => {
+    expect(orderPokemonUpward(testPokemon.pokemon)).toEqual(pokemonAbc.pokemon);
+  });
+});
+
+// De z a la a
+/*
+describe('orderPokemonDownward', () => {
+  it('is a function', () => {
+    expect(typeof orderPokemonDownward).toBe('function');
+  });
+
+
+  it('returns `orderPokemonDownward`', () => {
+    expect(orderPokemonDownward(testPokemon.pokemon)).toEqual(pokemonZwy.pokemon);
+  })
+});
+*/
+
+
+
+
+
+
+
+
+//---------------------Ejemplo-------------------
+
+
+/*
 describe('anotherExample', () => {
   it('is a function', () => {
     expect(typeof anotherExample).toBe('function');
@@ -21,3 +134,4 @@ describe('anotherExample', () => {
     expect(anotherExample()).toBe('OMG');
   });
 });
+*/
