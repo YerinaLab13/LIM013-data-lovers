@@ -8,14 +8,9 @@ header {
     padding:10px 0px 10px 0px;
     width: 100%;
     display: flex;
-<<<<<<< HEAD
-    /*background: rosybrown;*/
-    }
-=======
     justify-content: flex-start;
 
 }
->>>>>>> Data1
     
 .logo{
     width: 250px;
