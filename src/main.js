@@ -7,11 +7,30 @@ let allPokemon = data.pokemon;
 
 //mostrar pokémons
 function pokemonTemplate(poke) {
+    const quickMovesPoke= poke["quick-move"];
+    const statsQuickMove= quickMovesPoke.map((movement)=>{
+        return `
+        <p>${movement.name}</p>
+        <p>${movement.energy/movement["move-duration-seg"]}</p>`
+    }).join("")
+    const attackMoves = poke["special-attack"];
+
+    const statsAttackMove = attackMoves.map((movement)=>{
+        return `
+           <p> ${movement.name} </p>
+           <p> ${movement.energy / movement["move-duration-seg"]}</p>
+        `
+     }).join("")
+     
+
     return `
-        <div class='poke'>
+        <div class='poke'>  
+              
         <p class = 'poke-num'> ${poke.num}</p>
         <img class ='poke-img' src='${poke.img}'>
-        <p class= 'poke-name'> ${poke.name}</p>    
+        <p class= 'poke-name'> ${poke.name}</p> 
+        <div>${statsQuickMove}</div>  
+        <div> ${statsAttackMove} </div>
         </div>
         `;
 }
@@ -75,41 +94,3 @@ orderList.addEventListener("change", () => {
 //---------------------------Calculos de movimientos------------------------
 
 
-//----------------------Obteniendo movimientos el quick-move--------
-const pokemonQuickmove = (obj) =>obj["quick-move"];
-
-let allPokemonQuickMoves = allPokemon.map(pokemonQuickmove);
-//console.log(allPokemonQuickMoves);
-
-//---Obteniendo movimientos special attack----
-const pokAttack = (obj) =>obj ["special-attack"];
-
-let allPokemonAttackMoves = allPokemon.map(pokAttack);
-//console.table(attackMove);
-
-//----Eps[energía/(move-duration-seg)]------- 
-
-function epsPokemon(movement) {
-    return movement.energy / movement["move-duration-seg"];
-}
-
-let epsQuickMove = allPokemonQuickMoves.map((quickMovesArray)=>{
-    return quickMovesArray.map(epsPokemon);
-});
-
-let epsAttackMoves= allPokemonAttackMoves.map((attackMovesArray)=>{
-    return attackMovesArray.map(epsPokemon);
-})
-
-console.log(epsQuickMove);
-console.log(epsAttackMoves);
-
- //---Stab[base damage * 1.20] Si el tipo de ataque = al tipo de pokemon--------
-
-
- //---Dps [base damage/ move duration seg] Si es un ataque de tipo se considera el stab en lughar del base damage-------
-
-
-
-
-//console.log(example, data);

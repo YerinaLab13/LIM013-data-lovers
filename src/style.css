@@ -91,6 +91,32 @@ main {
     border-radius:8px;
     padding: 1px 6px;
 }
+
+.modal-contenido {
+    background-color:white;
+    width:300px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+}
+
+.modal{
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s;
+}
+
+#miModal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 footer {
     left: 0;
     bottom: 0;
