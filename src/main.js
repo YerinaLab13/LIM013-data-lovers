@@ -7,38 +7,59 @@ let allPokemon = data.pokemon;
 
 //mostrar pokémons
 function pokemonTemplate(poke) {
-    const quickMovesPoke= poke["quick-move"];
-    const statsQuickMove= quickMovesPoke.map((movement)=>{
-        return `
-        <p>${movement.name}</p>
-        <p>${movement.energy/movement["move-duration-seg"]}</p>`
-    }).join("")
-    const attackMoves = poke["special-attack"];
-
-    const statsAttackMove = attackMoves.map((movement)=>{
-        return `
-           <p> ${movement.name} </p>
-           <p> ${movement.energy / movement["move-duration-seg"]}</p>
-        `
-     }).join("")
-     
 
     return `
-        <div class='poke'>  
+        <div class='poke' data-num='${poke.num}'>  
               
         <p class = 'poke-num'> ${poke.num}</p>
         <img class ='poke-img' src='${poke.img}'>
-        <p class= 'poke-name'> ${poke.name}</p> 
-        <div>${statsQuickMove}</div>  
-        <div> ${statsAttackMove} </div>
+        <p class= 'poke-name'> ${poke.name.toUpperCase()}</p> 
         </div>
-        `;
+        `
+}
+
+function showInfoPokemon(e) {
+    const pokeNum = e.currentTarget.dataset.num;
+    const poke = allPokemon.filter(p=>p.num==pokeNum)[0];
+    debugger
+    
+    const quickMovesPoke = poke["quick-move"];
+    const statsQuickMove = quickMovesPoke.map((movement) => {
+        return `
+        <p>${movement.name}</p>
+        <p>${Math.round(movement.energy / movement["move-duration-seg"])}</p>`
+    }).join("")
+    const attackMoves = poke["special-attack"];
+
+    const statsAttackMove = attackMoves.map((movement) => {
+        return `
+           <p> ${movement.name} </p>
+           <p> ${Math.round(movement.energy / movement["move-duration-seg"])}</p>
+        `
+    }).join("")
+    
+    /*const modalShow = document.createElement("div");
+    modalShow.classlist.add("div");
+    modalShow.style.display = "none";
+    modalShow.innerHTML = `
+        <span>x</span>
+        <p class = 'poke-num'> ${poke.num}</p>
+        <img class ='poke-img' src='${poke.img}'>
+        <p class= 'poke-name'> ${poke.name.toUpperCase()}</p> 
+        <div>${statsQuickMove}
+        <div> ${statsAttackMove} 
+        `*/
+        
 }
 
 let root = document.getElementById("root");
 root.innerHTML = `
     <div class = 'pokedex'>${allPokemon.map(pokemonTemplate).join("")}</div>
     `;
+    const poke = document.querySelector(".poke");
+    poke.addEventListener("click", showInfoPokemon);
+    
+
 // ------------------------Filtrar por tipo------------------------
 let list = document.getElementById("list");
 list.addEventListener("change", () => {
@@ -50,7 +71,7 @@ list.addEventListener("change", () => {
         // console.log(typePokemon);
     }
     //console.log(selectValue);
-      
+
     // Mostrar Pokemones filtrados
     root.innerHTML = `
     <div class = 'pokedex'>${typePokemon
@@ -92,5 +113,3 @@ orderList.addEventListener("change", () => {
 
 
 //---------------------------Calculos de movimientos------------------------
-
-
