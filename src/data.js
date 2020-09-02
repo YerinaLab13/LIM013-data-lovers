@@ -1,9 +1,9 @@
 // estas funciones son de ejemplo
 export const filteredPokemon = (data,selectType) => {
-  const miArray= data.filter((myObject)=>{ 
+  const myArray= data.filter((myObject)=>{ 
     return myObject.type.includes(selectType); // Para ver si arreglo incluye valor seleccionado
   }); 
-  return miArray;
+  return myArray;
 };
 
 export const orderPokemonUpward = (myArray) => {
@@ -18,6 +18,13 @@ export const orderPokemonUpward = (myArray) => {
     //console.log(myArray);
     return myArray;
 };
+
+export const filteredName = (data,name) => {
+  const myArray= data.filter((myObject)=>{
+    return myObject.name.includes(name);
+  })
+  return myArray;
+}
 
 /*
 

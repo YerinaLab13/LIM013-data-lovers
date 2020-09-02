@@ -1,66 +1,83 @@
-import { filteredPokemon, orderPokemonUpward } from "./data.js"; //fijo
+import { filteredPokemon, orderPokemonUpward, filteredName } from "./data.js"; //fijo
 // import data from './data/lol/lol.js';
 import data from "./data/pokemon/pokemon.js"; //fijo
 // import data from './data/rickandmorty/rickandmorty.js';
 
 let allPokemon = data.pokemon;
-
+let modalContainer = document.querySelector(".modalContainer")
 //mostrar pokémons
 function pokemonTemplate(poke) {
 
     return `
-        <div class='poke' data-num='${poke.num}'>  
-              
-        <p class = 'poke-num'> ${poke.num}</p>
-        <img class ='poke-img' src='${poke.img}'>
-        <p class= 'poke-name'> ${poke.name.toUpperCase()}</p> 
+        <div class='poke' data-num='${poke.num}'>       
+            <p class = 'poke-num'> ${poke.num}</p>
+            <img class ='poke-img' src='${poke.img}'>
+            <p class= 'poke-name'> ${poke.name.toUpperCase()}</p> 
         </div>
         `
 }
 
+//--------------------Modal--------------------------------------
+
 function showInfoPokemon(e) {
+    modalContainer.innerHTML = "";
     const pokeNum = e.currentTarget.dataset.num;
-    const poke = allPokemon.filter(p=>p.num==pokeNum)[0];
-    debugger
-    
-    const quickMovesPoke = poke["quick-move"];
-    const statsQuickMove = quickMovesPoke.map((movement) => {
+    const poke = allPokemon.filter(p => p.num == pokeNum)[0];
+
+    //Calculo eps pokemon
+    const epsTemplateFunction = (movement) => {
         return `
         <p>${movement.name}</p>
         <p>${Math.round(movement.energy / movement["move-duration-seg"])}</p>`
-    }).join("")
-    const attackMoves = poke["special-attack"];
+    }
+    const quickMovesPoke = poke["quick-move"];
+    const statsQuickMove = quickMovesPoke.map(epsTemplateFunction).join ("");
 
-    const statsAttackMove = attackMoves.map((movement) => {
-        return `
-           <p> ${movement.name} </p>
-           <p> ${Math.round(movement.energy / movement["move-duration-seg"])}</p>
-        `
-    }).join("")
+    const attackMoves = poke["special-attack"];
+    const statsAttackMove = attackMoves.map(epsTemplateFunction).join("");
     
-    /*const modalShow = document.createElement("div");
-    modalShow.classlist.add("div");
-    modalShow.style.display = "none";
+    modalContainer.style.display = "block"
+    const modalShow = document.createElement("div");
+    modalShow.classList.add("modalShow");
+    //modalShow.style.display = "block";
     modalShow.innerHTML = `
-        <span>x</span>
-        <p class = 'poke-num'> ${poke.num}</p>
-        <img class ='poke-img' src='${poke.img}'>
-        <p class= 'poke-name'> ${poke.name.toUpperCase()}</p> 
-        <div>${statsQuickMove}
-        <div> ${statsAttackMove} 
-        `*/
-        
+        <div class="flexModal">
+            <div class= "modal-header">
+                <span class="close">x</span>
+            </div>
+            <div class= "modalBody">
+                <p class = 'poke-num'> ${poke.num}</p>
+                <img class ='poke-img' src='${poke.img}'>
+                <p class= 'poke-name'> ${poke.name.toUpperCase()}</p>
+                <div>${statsQuickMove}</div>
+                <div>${statsAttackMove}</div> 
+            </div> 
+        </div>
+        `
+    modalContainer.appendChild(modalShow);
+
+    //return modalContainer;
+    const close = document.querySelector(".close");
+    close.addEventListener("click", () => {
+        modalContainer.style.display = "none";
+    })
+
 }
 
 let root = document.getElementById("root");
 root.innerHTML = `
     <div class = 'pokedex'>${allPokemon.map(pokemonTemplate).join("")}</div>
     `;
-    const poke = document.querySelector(".poke");
-    poke.addEventListener("click", showInfoPokemon);
-    
+
+const listPoke = document.querySelectorAll(".poke");
+
+listPoke.forEach((card) => {
+    card.addEventListener('click', showInfoPokemon)
+});
+
 
 // ------------------------Filtrar por tipo------------------------
+
 let list = document.getElementById("list");
 list.addEventListener("change", () => {
     let typePokemon = allPokemon;
@@ -78,7 +95,12 @@ list.addEventListener("change", () => {
             .map(pokemonTemplate)
             .join("")}</div>
     `;
+    const listPoke = document.querySelectorAll(".poke");
 
+    listPoke.forEach((card) => {
+        card.addEventListener('click', showInfoPokemon)
+    });    
+    
 });
 
 // -------------------Función ordenar pokemones alfabéticamente-------------------------
@@ -109,7 +131,26 @@ orderList.addEventListener("change", () => {
     root.innerHTML = `
         <div class = 'pokedex'>${allPokemon.map(pokemonTemplate).join("")}</div>
         `;
+
+    const listPoke = document.querySelectorAll(".poke");
+
+    listPoke.forEach((card) => {
+            card.addEventListener('click', showInfoPokemon)
+    });  
 })
 
+//--------------------------Filtro por nombre--------------------------
+const inputName = document.getElementById("search");
+inputName.addEventListener("keyup", () => {
+    let inputNameValue = inputName.value;
+    console.log(inputNameValue);
+    const searchName = filteredName(allPokemon, inputNameValue)
+    root.innerHTML = `
+        <div class = 'pokedex'>${searchName.map(pokemonTemplate).join("")}</div>
+        `;
+    const listPoke = document.querySelectorAll(".poke");
 
-//---------------------------Calculos de movimientos------------------------
+    listPoke.forEach((card) => {
+        card.addEventListener('click', showInfoPokemon)
+    });  
+})

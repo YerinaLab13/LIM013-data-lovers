@@ -81,6 +81,17 @@ main {
     font-size: 16px;
     margin-right:20px;
     cursor: pointer; 
+    border: 0px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+.search{
+    border-radius:10px;
+    padding: 2px 10px;
+    font-family: 'Baloo Tamma 2';
+    font-size: 16px;
+    margin-right:20px;
+    border: 0px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
 .pokedex{
     display:flex;
@@ -128,30 +139,39 @@ main {
     padding: 1px 6px;
 }
 
-.modal-contenido {
-    background-color:white;
-    width:300px;
-    padding: 10px 20px;
-    margin: 20% auto;
-    position: relative;
-}
 
-.modal{
+
+.modalContainer{
     background-color: rgba(0,0,0,.5);
     position: fixed;
     top:0;
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 1s;
+    opacity: 1;
+    transition:all 1s;
+    z-index: 1;
+    /*cursor: none;*/
 }
 
-#miModal:target {
-    opacity: 1;
-    pointer-events: auto;
+.modalShow {
+    background-color:white;
+    width:300px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+    cursor: pointer;    
 }
+.close {
+    pointer-events: all;
+    font-size: 20px;
+}
+
+/*#modalContainer :target {
+    opacity: 1;
+    /*pointer-events: auto;
+}
+*/
 
 footer {
     left: 0;
