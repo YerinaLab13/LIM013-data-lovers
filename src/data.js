@@ -25,7 +25,15 @@ export const filteredName = (data,name) => {
   })
   return myArray;
 }
+export const epsfunction = (energy, movement)=>{
+  const epsCompute = Math.round(energy/movement);
+  return epsCompute;
+ }
+ 
+ 
 
+
+//export const 
 /*
 
 

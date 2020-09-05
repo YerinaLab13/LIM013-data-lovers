@@ -1,34 +1,59 @@
-import { filteredPokemon, orderPokemonUpward, filteredName } from "./data.js"; //fijo
+import { filteredPokemon, orderPokemonUpward, filteredName, epsfunction } from "./data.js"; //fijo
 // import data from './data/lol/lol.js';
 import data from "./data/pokemon/pokemon.js"; //fijo
 // import data from './data/rickandmorty/rickandmorty.js';
 
 let allPokemon = data.pokemon;
-let modalContainer = document.querySelector(".modalContainer")
-//mostrar pokémons
-function pokemonTemplate(poke) {
+const modalContainer = document.querySelector(".modalContainer");
+const root = document.getElementById("root");
+//-----------Mostrar pokemons-------------------------------------
 
+function pokemonTemplate(poke) {
+    const pokeTypes = poke.type;
+    //console.log(pokeTypes);
+    const elementPokemon = pokeTypes.map((type)=> {
+        return `<p>${type}</p>`
+    }).join("")
+    //En el div class poke se asigna el data set que se usará para el evento. Ver línea 39
     return `
-        <div class='poke' data-num='${poke.num}'>       
+        <div class='poke' data-num='${poke.num}'>     
             <p class = 'poke-num'> ${poke.num}</p>
             <img class ='poke-img' src='${poke.img}'>
             <p class= 'poke-name'> ${poke.name.toUpperCase()}</p> 
+            <div> ${elementPokemon}</div>
         </div>
         `
 }
 
+root.innerHTML = `
+    <div class = 'pokedex'>${allPokemon.map(pokemonTemplate).join("")}</div>
+    `;
+       
 //--------------------Modal--------------------------------------
 
 function showInfoPokemon(e) {
     modalContainer.innerHTML = "";
-    const pokeNum = e.currentTarget.dataset.num;
+    const pokeNum = e.currentTarget.dataset.num; ////ver línea 17
     const poke = allPokemon.filter(p => p.num == pokeNum)[0];
+    //const pokeTypes = poke.type;
 
     //Calculo eps pokemon
     const epsTemplateFunction = (movement) => {
-        return `
+        /*return `
         <p>${movement.name}</p>
-        <p>${Math.round(movement.energy / movement["move-duration-seg"])}</p>`
+        <p>${Math.round(movement.energy / movement["move-duration-seg"])}</p>`*/
+        
+        /*let stab = 0;
+        if (movement.type.includes(pokeTypes)){
+            stab = true;
+            console.log(stab);         
+        } 
+        */
+
+        return `
+        <p>${movement.name} </p>
+        <p>${epsfunction(movement.energy,movement["move-duration-seg"])} </p>
+        `
     }
     const quickMovesPoke = poke["quick-move"];
     const statsQuickMove = quickMovesPoke.map(epsTemplateFunction).join ("");
@@ -36,21 +61,30 @@ function showInfoPokemon(e) {
     const attackMoves = poke["special-attack"];
     const statsAttackMove = attackMoves.map(epsTemplateFunction).join("");
     
+    //Calculo Stab
+    
+
+
+
+    //-----------Aparece modal------------------
     modalContainer.style.display = "block"
     const modalShow = document.createElement("div");
     modalShow.classList.add("modalShow");
-    //modalShow.style.display = "block";
     modalShow.innerHTML = `
         <div class="flexModal">
             <div class= "modal-header">
                 <span class="close">x</span>
             </div>
-            <div class= "modalBody">
-                <p class = 'poke-num'> ${poke.num}</p>
-                <img class ='poke-img' src='${poke.img}'>
-                <p class= 'poke-name'> ${poke.name.toUpperCase()}</p>
-                <div>${statsQuickMove}</div>
-                <div>${statsAttackMove}</div> 
+            <div class= "modal-body">
+                <img class ='poke-img-modal-body' src='${poke.img}'>
+                <div class ='basicInf-modal-body' >
+                    <p class = 'poke-num-modal-body'> ${poke.num}</p> 
+                    <p class= 'poke-name-modal-body'> ${poke.name.toUpperCase()}</p>
+                </div>
+                <div class= 'stats-modal-body'>
+                    <div>${statsQuickMove}</div>
+                    <div>${statsAttackMove}</div> 
+                </div>
             </div> 
         </div>
         `
@@ -61,16 +95,11 @@ function showInfoPokemon(e) {
     close.addEventListener("click", () => {
         modalContainer.style.display = "none";
     })
-
+    
 }
 
-let root = document.getElementById("root");
-root.innerHTML = `
-    <div class = 'pokedex'>${allPokemon.map(pokemonTemplate).join("")}</div>
-    `;
-
 const listPoke = document.querySelectorAll(".poke");
-
+console.log(listPoke);
 listPoke.forEach((card) => {
     card.addEventListener('click', showInfoPokemon)
 });
@@ -95,6 +124,7 @@ list.addEventListener("change", () => {
             .map(pokemonTemplate)
             .join("")}</div>
     `;
+    
     const listPoke = document.querySelectorAll(".poke");
 
     listPoke.forEach((card) => {
@@ -103,7 +133,7 @@ list.addEventListener("change", () => {
     
 });
 
-// -------------------Función ordenar pokemones alfabéticamente-------------------------
+// -------------------FunciÃ³n ordenar pokemones alfabaticamente-------------------------
 
 /*function orderPokemon(myArray) {
     myArray.sort(function(a,b){
@@ -120,16 +150,28 @@ list.addEventListener("change", () => {
 
 let orderList = document.getElementById("orderList");
 orderList.addEventListener("change", () => {
+    let selectValue = list.value;
+
+    let pokedexfilter = allPokemon;
+
+    if (selectValue !== 'allPokemon'){
+        pokedexfilter = filteredPokemon(allPokemon,selectValue);
+    }
+
+    /*const pokedexfilter = filteredPokemon(allPokemon,selectValue);*/
+    
     let orderListValue = orderList.value;
+    
     if (orderListValue === 'upward') {
-        orderPokemonUpward(allPokemon);
+        orderPokemonUpward(pokedexfilter);
+        console.log(pokedexfilter);
     }
     if (orderListValue === 'downward') {
-        orderPokemonUpward(allPokemon).reverse();
+        orderPokemonUpward(pokedexfilter).reverse();
     }
     //Mostrar pokemones ordenados
     root.innerHTML = `
-        <div class = 'pokedex'>${allPokemon.map(pokemonTemplate).join("")}</div>
+        <div class = 'pokedex'>${pokedexfilter.map(pokemonTemplate).join("")}</div>
         `;
 
     const listPoke = document.querySelectorAll(".poke");
@@ -154,3 +196,8 @@ inputName.addEventListener("keyup", () => {
         card.addEventListener('click', showInfoPokemon)
     });  
 })
+
+//---Stab[base damage * 1.20] Si el tipo de ataque = al tipo de pokemon--------
+
+
+//---Dps [base damage/ move duration seg] Si es un ataque de tipo se considera el stab en lughar del base damage-------
