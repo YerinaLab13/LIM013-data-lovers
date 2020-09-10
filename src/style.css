@@ -1,63 +1,108 @@
 *{
+    box-sizing:border-box;
     margin: 0px;
-    padding: 0px;  
+    padding: 0px; 
+    font-family: 'Baloo Tamma 2';
+}
+html{
+    font-size: 62.5%;
+}
+
+body {
+    cursor: url(imagenes/pokebola-mouse2.png),auto;
 }
     
 header {
-    background-color: #3060B0;
+    background-color: #062250;
     padding:10px 0px 10px 0px;
     width: 100%;
     display: flex;
-<<<<<<< HEAD
-    /*background: rosybrown;*/
-    }
-=======
     justify-content: flex-start;
-
+    position: fixed;
+    box-shadow: black 1px 2px 3px;
 }
->>>>>>> Data1
     
 .logo{
-    width: 250px;
+    width: 200px;
     margin:0px 16px;
 }
-    
-main {
-    background-color: #EEE8E8;  
+
+.logo:hover {
+    -webkit-transform:scale(1.3);
+    transform:scale(1.1);
+}
+
+.container  {
+    background: url(imagenes/estadio-pokemon-rec.png); 
+    background-attachment: fixed;
+    background-size: cover;
     width:100%;
 }
-    
-.findPokemon{
-    text-align: center;
-    font-family: 'Baloo Tamma 2'; 
-    color: #616161;
-    font-size: 45px;
-    padding: 12px; 
-}
-    
-    
-    
-/*.root {
-   
-/* flex-direction: row;
-  
-}*/
 
-.selector{ 
-    display:flex;
-    justify-content:center;
-    font-family: 'Baloo Tamma 2';
-    color: #6d6d6d;
-    font-weight: bold;
-    font-size: 22px;
+iframe {
+    height: 380px;
+    width: 100%;
+    cursor: pointer;
+    
 }
+    
+.allSelectors { 
+    display:flex;
+    align-content:center;
+    
+    flex-direction: column;
+    width: 100%;
+    font-family:'Baloo Da 2', cursive;
+    background-color: #062250;;
+    color: #ffffff;
+    font-size: 22px;
+    text-shadow: black 1px 2px 3px;
+    margin-top:-8px;
+    padding-top: 18px;
+    padding-bottom: 12px;
+    box-shadow: black 1px 2px 3px;
+}
+
+
 .list {
     border-radius:10px;
     padding: 2px 10px;
     font-family: 'Baloo Tamma 2';
     font-size: 16px;
-    margin-right:20px;
+    margin-right:30px;
+    cursor: pointer; 
+    border: 0px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
+
+.searchPokemon{
+    display:flex;
+    justify-content:center;
+    width:100%;
+    padding-bottom: 10px;
+}
+
+.search{
+    
+    border-radius:10px;
+    
+    padding: 2px 12px;
+    font-family: 'Baloo Tamma 2';
+    font-size: 16px;
+    border: 0px;
+    width: 80%;
+    max-width:600px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    
+}
+
+.selectors-filter-order{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+
+}
+
 .pokedex{
     display:flex;
     flex-wrap:wrap;
@@ -66,25 +111,37 @@ main {
 }
 
 .poke{
-    width:185px;
+    width:220px;
     padding:16px;
-    margin: 40px;
+    margin: 50px;
     background-color:#ffffff;
-    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: -4px 3px 3px  rgba(0, 0, 0, 0.3);
     overflow: hidden;
     border-radius:12px;
     display: flex;
     flex-direction:column;
     align-items:center
 }
+
 .poke-img{
     width:160px;
+    /*cursor: ;*/
 }
+
+.poke:hover .poke-img {
+    -webkit-transform:scale(1.9);   
+    transform:scale(1.2);
+    -moz-transform: scale(1.90);
+    -ms-transform: scale(1.90);
+    -o-transform: scale(1.90);
+}
+
 .poke-name {
     font-size: 20px;
     font-family: 'Baloo Tamma 2';
     font-weight: 600;
     color: #616161;
+    /*color:#3060b0;*/
     
 }    
     
@@ -93,19 +150,211 @@ main {
     font-family: 'Baloo Tamma 2';
     color: #ffffff;
     background-color:#3060b0;
+    /*background-color: #858788 ;*/
+    /*background-color: #66a2b1 ;*/
     border-radius:8px;
     padding: 1px 6px;
 }
+
+/*---------------------MODAL-------------------------------------------------*/
+
+.modalContainer{
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    transition:all 1s;
+    z-index: 1;
+}
+
+.modalShow {
+    background-color:white;
+    width:70%;
+    max-width:300px;
+    /*height: 440px;*/
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+    cursor: pointer;  
+    border-radius: 12px; 
+
+}
+
+.flexModal {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+}
+
+.modal-header{
+        display: flex;
+        justify-content: flex-end;
+        width:100%;
+}
+
+
+.close {
+    pointer-events: all;
+    font-size: 30px;
+    font-weight: 400;
+    /*padding-top: 1px;*/
+}
+
+.modal-body {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.poke-img-modal-body  {
+    position: relative;
+    top: -120px;
+    width: 140px;
+    
+}
+
+/*.poke-img-modal-body {
+    /*position: relative;
+    top: -120px;
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    
+}*/
+
+.inf-modal-body {
+    
+    font-weight: 600;
+    font-family: 'Baloo Tamma 2'; 
+    color: #616161;
+    margin-top: -130px;
+    display: flex;
+    flex-direction:column;
+    align-items:center; 
+}
+
+.poke-num-modal-body {
+    font-size: 12px;
+    
+}
+
+.poke-name-modal-body{
+    font-size: 20px;
+    margin-top:-8px;
+}
+
+.details-modal-body{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.details-modal-body img{
+    width: 30px;
+    
+}
+
+.detail {
+    display: flex;
+    margin-left: 8px;
+    margin-bottom: 3px;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: #E9E4E4;
+    font-size: 11px;
+    width:70px;
+}
+
+.stats-modal-body{
+    font-size: 13px;
+}
+
+.header-stats{
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.encabezado{
+    background-color: #CEF2FA;
+    padding-right:25px;
+    padding-left:10px;
+    border-radius: 2px;
+    /*text-align:center;*/
+    margin-bottom:3px;
+    margin-top:8px;
+}
+
+.table-movement{
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
+}
+
+/*table {
+    border: solid 1px;
+}*/
+
+.stats-movement-name {
+    
+    width:100px;
+    border-radius: 2px;
+    text-align:center;
+    margin-bottom:2px;
+    background-color:#E9E4E4
+ }
+
+ .stats-movement-eps {
+   
+    width:30px;
+    border-radius: 2px;
+    text-align:center;
+    margin-bottom:2px;
+    background-color:#E9E4E4
+
+ }
+
 footer {
     left: 0;
     bottom: 0;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 16px;
-    background-color: #3060B0;
-    font-size: 18px;
-    font-weight: 500;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #807e7e;
+    height: 60px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: sans-serif;
     align-content: center;
     justify-content: center;
+    color: whitesmoke;
+    display:flex;
+    
+}
+.icon-footer {
+    width: 20px;
+    height: 20px;
+}
+
+@media screen and (min-width: 350px) {
+    
+}
+
+@media (min-width: 480px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+    
 }
