@@ -137,7 +137,7 @@ const openModal= (myArray)=>{
     myArray.forEach((card)=>{
         card.addEventListener('click', showInfoPokemon)
     });
-}
+};
 
 openModal(listPoke);
 
@@ -207,7 +207,7 @@ orderList.addEventListener("change", () => {
     const listPoke = document.querySelectorAll(".poke");
 
     openModal(listPoke);
-})
+});
 //-------------------------- Filtro por nombre -----------------------------
 
 const inputName = document.getElementById("search");
@@ -219,7 +219,7 @@ inputName.addEventListener("keyup", () => {
         `;
     const listPoke = document.querySelectorAll(".poke");
     openModal(listPoke);
-})
+});
 
 //-----------------------Filtro por generación---------------------------------
 
@@ -244,4 +244,4 @@ generation.addEventListener("change", () => {
     const listPoke = document.querySelectorAll(".poke");
 
     openModal(listPoke);    
-})
+});
