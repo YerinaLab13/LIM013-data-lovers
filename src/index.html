@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width= device-width, initial-scale=1.0, user-scalable=no , maximum-scale=1.0
@@ -21,64 +20,60 @@
 
   <main>
     <section class="container">
-      <!--<iframe src="https://www.youtube.com/embed/dXxSlpfvqs0?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
       <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SWtDeeXtMZM?controls=0"
         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-
-
+        allowfullscreen>
+      </iframe>
       <section class="allSelectors">
-
         <div class="searchPokemon">
-          <input type="text" id="search" class="search" placeholder="Buscar Pokémon " value="">
+          <input type="text" id="search" class="search" placeholder="Find Pokemon" value="">
           <!--<img class="search-icon" src="imagenes/buscar-icon.png">-->
         </div>
 
         <div class="selectors-filter-order">
           <div class="selectorType">
-            <label for="list">Tipo</label>
+            <label for="list">Type</label>
             <select class="list" id="list">
-              <option value="allPokemon">Todos</option>
-              <option value="steel">Acero</option>
-              <option value="water">Agua</option>
+              <option value="allPokemon">All</option>
+              <option value="steel">Steel</option>
+              <option value="water">Water</option>
               <option value="dragon">Dragon</option>
-              <option value="electric">Eléctrico</option>
-              <option value="ghost">Fantasma</option>
+              <option value="electric">Electric</option>
+              <option value="ghost">Ghost</option>
               <option value="fire">Fuego</option>
-              <option value="fairy">Hada</option>
-              <option value="ice">Hielo</option>
-              <option value="grass">Hierba</option>
-              <option value="bug">Insecto</option>
-              <option value="fighting">Lucha</option>
+              <option value="fairy">Fairy</option>
+              <option value="ice">Ice</option>
+              <option value="grass">Grass</option>
+              <option value="bug">Bug</option>
+              <option value="fighting">Fighting</option>
               <option value="normal">Normal</option>
-              <option value="dark">Oscuro</option>
-              <option value="psychic">Psiquico</option>
-              <option value="rock">Roca</option>
-              <option value="ground">Tierra</option>
-              <option value="poison">Veneno</option>
-              <option value="flying">Volador</option>
+              <option value="dark">Dark</option>
+              <option value="psychic">Psychic</option>
+              <option value="rock">Rock</option>
+              <option value="ground">Ground</option>
+              <option value="poison">Poison</option>
+              <option value="flying">Flying</option>
             </select>
           </div>
           <div class="generation-p">
-            <label for="generation">Región</label>
+            <label for="generation">Region</label>
             <select class="list" id="generation">
-              <option value ="allPokemon">Todas</option>
+              <option value ="allPokemon">All</option>
               <option value="kanto">Kanto</option>
               <option value="johto">Johto</option>
             </select>
           </div>
           <div class="selectorOrder">
-            <label for="orderList">Ordenar</label>
+            <label for="orderList">Order</label>
             <select class="list" id="orderList">
               <option value="default"> </option>
               <option value="upward">A-Z</option>
               <option value="downward">Z-A</option>
             </select>
           </div>
-
-          
         </div>
       </section>
+
       <section id="root" class="root">
       </section>
       <div id="modalContainer" class="modalContainer" style="display:none">
@@ -87,14 +82,24 @@
     </section>
   </main>
   <footer>
-    <img class="icon-footer" src="imagenes/copyright.png" />
+    <div>
+    <img class="icon-footer" src="imagenes/copyright.png"/>
     <p class="footCopy"> Copyright Todos los derechos reservados-2020 </p>
-    <img class="icon-footer" src="imagenes/github-logo-s.png" />
-
+  </div>
+    <p>Team Developer</p>
+    <div>
+      <a href="https://github.com/YerinaLab13">
+      <img class="icon-footer" src="imagenes/github-logo-s.png"/>
+      </a>  
+      <p>Yerina Barrientos</p>
+    </div>
+    <div>
+      <a href="https://github.com/Fran2304">
+      <img class="icon-footer" src="imagenes/github-logo-s.png"/>
+      </a>
+      <p>Francesca Tiravantti</p>
+    </div>
   </footer>
   <script src="main.js" type="module"></script>
-
-
 </body>
-
 </html>

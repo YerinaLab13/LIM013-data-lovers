@@ -45,11 +45,11 @@ iframe {
     cursor: pointer;
     
 }
-    
+
+/*----------------------Selectores--------------------- */
 .allSelectors { 
     display:flex;
     align-content:center;
-    
     flex-direction: column;
     width: 100%;
     font-family:'Baloo Da 2', cursive;
@@ -62,7 +62,6 @@ iframe {
     padding-bottom: 12px;
     box-shadow: black 1px 2px 3px;
 }
-
 
 .list {
     border-radius:10px;
@@ -83,9 +82,7 @@ iframe {
 }
 
 .search{
-    
     border-radius:10px;
-    
     padding: 2px 12px;
     font-family: 'Baloo Tamma 2';
     font-size: 16px;
@@ -93,16 +90,15 @@ iframe {
     width: 80%;
     max-width:600px;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
-    
 }
 
 .selectors-filter-order{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-
 }
 
+/*------------------------Cards----------------------*/
 .pokedex{
     display:flex;
     flex-wrap:wrap;
@@ -125,7 +121,6 @@ iframe {
 
 .poke-img{
     width:160px;
-    /*cursor: ;*/
 }
 
 .poke:hover .poke-img {
@@ -137,12 +132,10 @@ iframe {
 }
 
 .poke-name {
-    font-size: 20px;
+    font-size: 22px;
     font-family: 'Baloo Tamma 2';
     font-weight: 600;
     color: #616161;
-    /*color:#3060b0;*/
-    
 }    
     
 .poke-num {
@@ -150,13 +143,21 @@ iframe {
     font-family: 'Baloo Tamma 2';
     color: #ffffff;
     background-color:#3060b0;
-    /*background-color: #858788 ;*/
-    /*background-color: #66a2b1 ;*/
     border-radius:8px;
     padding: 1px 6px;
 }
 
-/*---------------------MODAL-------------------------------------------------*/
+.poke-type{
+    justify-content: center;
+    display: flex;
+    width: 60%;
+    font-size: 15px;
+}
+
+.poke-type p{
+    margin:8px;
+}
+/*---------------------Modal------------------------------------------------*/
 
 .modalContainer{
     background-color: rgba(0,0,0,.5);
@@ -174,20 +175,17 @@ iframe {
     background-color:white;
     width:70%;
     max-width:300px;
-    /*height: 440px;*/
     padding: 10px 20px;
     margin: 20% auto;
     position: relative;
     cursor: pointer;  
     border-radius: 12px; 
-
 }
 
 .flexModal {
     display: flex;
     flex-direction: column;
     align-content: center;
-
 }
 
 .modal-header{
@@ -196,12 +194,10 @@ iframe {
         width:100%;
 }
 
-
 .close {
     pointer-events: all;
     font-size: 30px;
     font-weight: 400;
-    /*padding-top: 1px;*/
 }
 
 .modal-body {
@@ -214,20 +210,9 @@ iframe {
     position: relative;
     top: -120px;
     width: 140px;
-    
 }
 
-/*.poke-img-modal-body {
-    /*position: relative;
-    top: -120px;
-    display:flex;
-    justify-content: center;
-    width: 100%;
-    
-}*/
-
 .inf-modal-body {
-    
     font-weight: 600;
     font-family: 'Baloo Tamma 2'; 
     color: #616161;
@@ -238,8 +223,7 @@ iframe {
 }
 
 .poke-num-modal-body {
-    font-size: 12px;
-    
+    font-size: 12px; 
 }
 
 .poke-name-modal-body{
@@ -251,12 +235,10 @@ iframe {
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
-    
 }
 
 .details-modal-body img{
     width: 30px;
-    
 }
 
 .detail {
@@ -286,24 +268,17 @@ iframe {
     padding-right:25px;
     padding-left:10px;
     border-radius: 2px;
-    /*text-align:center;*/
     margin-bottom:3px;
     margin-top:8px;
 }
 
 .table-movement{
-   
     display: flex;
     flex-direction: row;
     justify-content: space-evenly
 }
 
-/*table {
-    border: solid 1px;
-}*/
-
 .stats-movement-name {
-    
     width:100px;
     border-radius: 2px;
     text-align:center;
@@ -312,13 +287,11 @@ iframe {
  }
 
  .stats-movement-eps {
-   
     width:30px;
     border-radius: 2px;
     text-align:center;
     margin-bottom:2px;
     background-color:#E9E4E4
-
  }
 
 footer {
@@ -332,29 +305,16 @@ footer {
     font-size: 14px;
     font-weight: 300;
     font-family: sans-serif;
-    align-content: center;
-    justify-content: center;
+    justify-content: space-evenly;
     color: whitesmoke;
-    display:flex;
-    
+    display:flex; 
 }
+
 .icon-footer {
     width: 20px;
     height: 20px;
 }
 
-@media screen and (min-width: 350px) {
-    
-}
-
-@media (min-width: 480px) {
-
-}
-
-@media (min-width: 768px) {
-
-}
-
-@media screen and (min-width: 1024px) {
-    
+footer div{
+    display: flex;
 }

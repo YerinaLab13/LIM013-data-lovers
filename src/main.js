@@ -4,12 +4,11 @@ import data from "./data/pokemon/pokemon.js"; //fijo
 // import data from './data/rickandmorty/rickandmorty.js';
 
 const allPokemon = data.pokemon;
-const modalContainer = document.querySelector(".modalContainer");
+const modalContainer = document.querySelector('.modalContainer');
 const root = document.getElementById("root");
 const generation = document.getElementById("generation");
 const list = document.getElementById("list");
 //------------------------- Mostrar pokemons -------------------------------------
-
 function pokemonTemplate(poke) {
     const pokeTypes = poke.type;
     //console.log(pokeTypes);
@@ -22,7 +21,7 @@ function pokemonTemplate(poke) {
             <p class='poke-num'>${poke.num}</p>
             <img class='poke-img' src='${poke.img}'>
             <p class='poke-name'>${poke.name.toUpperCase()}</p> 
-            <div>${elementPokemon}</div>
+            <div class='poke-type'>${elementPokemon}</div>
         </div>
         `
 }
@@ -42,7 +41,7 @@ function showInfoPokemon(e) {
         <p>${movement.name}</p>
         <p>${Math.round(movement.energy / movement["move-duration-seg"])}</p>`*/
         return `
-            <div class= "table-movement">       
+            <div class="table-movement">       
             <div class="stats-movement-name">${movement.name}</div>
             <div class="stats-movement-eps">${epsfunction(movement.energy, movement["move-duration-seg"])}</div>
             </div>             
@@ -85,7 +84,7 @@ function showInfoPokemon(e) {
                         <p>${poke.egg}</p>
                     </div>  
                     <div class='detail'>
-                        <img src= "imagenes/height.png">
+                        <img src="imagenes/height.png">
                         <p>${poke.size.height}</p>
                     </div>  
                     <div class='detail'>
@@ -145,10 +144,10 @@ openModal(listPoke);
 
 list.addEventListener("change", () => {
     let typePokemon = allPokemon;
-    let selectValue = list.value;
+    let selectType = list.value;
     // filtra si la seleccion es diferente a all pokemon
-    if (selectValue !== "allPokemon") {
-        typePokemon = filteredPokemon(allPokemon, selectValue); //Filtra los pokemones        
+    if (selectType !== "allPokemon") {
+        typePokemon = filteredPokemon(allPokemon, selectType); //Filtra los pokemones        
     }
     
      //----------Mostrar Pokemones filtrados--------

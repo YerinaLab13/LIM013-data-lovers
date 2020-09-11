@@ -1,3 +1,165 @@
+# Pokémon Plus
+
+## Índice
+
+* [1. Descripción general del proyecto](#1-descripción-general-del-proyecto)
+* [2. Usuario objetivo](#2-usuario-objetivo)
+* [3. UX-research](#3-ux-research)
+* [4. Historias de usuario](#4-historias-de-usuario)
+* [5. Prototipado](#5-prototipado)
+* [6. Test de usabilidad](#6-Test-de-usabilidad)
+* [7. Proyecto final](#7-Proyecto-final)
+* [8. Creado por](#8-Creado-por)
+
+### 1. Descripción general del proyecto
+"Pokémon Plus" es una guía en la que podrás encontrar la información necesaria para ser el mejor maestro Pokémon. Aquí podrás encontrar a los 251 pokémons de las regiones de Kanto y Johto. Además de ellos podrás filtrarlos por tipo, región y ordenarlos por orden alfábetico. 
+Es una interfaz accesible para todo tipo de usuario que desee iniciarse en el mundo de Pokémon Go.
+
+### 2. Usuario objetivo
+Toda persona principiante en el juego Pokémon GO, que desee información adicional para conocer las características de cada Pokémon. 
+
+### 3. UX-research
+Para este procesaron se realizaron entrevistas y encuestas para conocer las necesidades de nuestros usuarios.
+
+* [Preguntas de encuesta](https://docs.google.com/forms/d/e/1FAIpQLSeO_KnHyvm0jhAYE0FkkypkIZ7s6jJo_9yzz0JpxNXk6BzB8w/viewform?usp=sf_link)
+
+* [Respuestas de entrevistas](https://docs.google.com/spreadsheets/d/1aGsY4gWuWZjjTJ6d8OshS8C6PIEWzmQGtm9OGHFpO7E/edit?usp=sharing)
+
+### 4. Historias de usuario
+
+* Historia 1
+Yo como jugador pokémon quiero saber el nombre y ver la imagen del pokémon
+
+Criterios de aceptación
+- Ver imagen de pokémon, el nombre, número de orden.
+- Ver todos los pokemones
+
+Definición de terminado
+
+La interfaz es responsive
+Se usa método map
+Se muestra las propiedades name, num, img en la interfaz
+Se usa template strings
+Se tarbaja con el pokemon.js
+
+
+* Historia 2
+Yo como jugador Pokémon Go quiero ver los pokémons por tipo de elemento para escogerlos en la batallas
+
+* Criterios de aceptación:
+- Usuario debe ver al inicio todos los pokémons
+- El usuario puede ver los tipos de pokémon que existen a través de un lista desplegable
+- El usuario selecciona el tipo de pokémon que existe
+- El usuario puede ver todos lo pokémon de ese tipo
+- Si el usuario selecciona "All" verá nuevamente todos los Pokemons
+
+Definición de terminado
+
+La interfaz es responsive
+Lista despleglable
+El código pasa los test unitarios (is a function, type filtered)
+Se usa el método filter
+Se usa el metodo map
+
+* Historia 3
+Yo como jugador Pokémon Go quiero ver los pokémons por región para conocer su origen
+
+Criterios de aceptación:
+- Usuario debe ver al inicio todos los pokémons
+- El usuario puede ver las regiones que existen a través de un lista desplegable
+- El usuario selecciona la región que desea
+- El usuario puede ver todos lo pokémon de esa región
+- Si el usuario selecciona "Todas" verá nuevamente todos los Pokemons
+
+Definición de terminado
+
+La interfaz es responsive
+Lista despleglable
+El código pasa los test unitarios (is a function, type filtered)
+Se usa el método filter
+Se usa el metodo map
+
+* Historia 4
+Yo como jugador de Pokémon Go quiero ver los pokémon ordenados alfabéticamente
+
+Criterios de aceptación:
+- Usuario escoge si es descendente (a-z) o ascendente (z-a) 
+- Usuario visualiza los pokémon en el orden escogido
+- Si el usuario no selecciona ninguno los pokemon deben de aparecer por orden de número
+
+Definición de terminado
+
+Definición de terminado
+La interfaz es responsive
+Pasa 2. Alfabeticamente ascendente y descendente
+Test sort
+Lista desplegable de a-z y z-a.
+
+* Historia 5
+Yo como jugador quiero ver la informacion de cada pokemon
+
+Criterios de aceptación:
+-La información figurará cuando se dé clic a la imagen del pokémon
+-Debería ver el nombre del pokémon.
+-Se puede visualizar el tipo de pokemon.
+-Se puede visualizar información básica del pokémon (egg, weight, heigth)
+-Se puede visualizar la suma de (base-attack, base-damage,stamina, hp, cp)
+-Se puede visualizar el Eps por cada movimiento (quick move y special Attack)
+-Imagen del pokémon
+
+Definición de terminado
+
+La interfaz es responsive
+Hacer el test
+La información se desplegará en un modal
+
+### 5. Prototipado
+
+#### 1. Papel
+![](src/imagenes/prototipo-en-papel.jpeg)
+
+#### 2. Figma
+
+![](src/imagenes/Android-1.png)
+![](src/imagenes/Android-2.png)
+![](src/imagenes/Desktop-1.png)
+![](src/imagenes/Desktop-2.png)
+![](src/imagenes/Android-3.png)
+
+* [Visita nuestro prototipo en Figma](https://www.figma.com/file/1MqoaRPQyyxd8DWyOuRS4q/Untitled)
+
+### 6. Test de usabilidad
+
+* Test 1
+- Incluir footer.
+- Considerar cálculos de pokémon en lugar de ranking.
+- Cambiar de colores.
+- Se retiró el menú hamburguesa
+
+* Test 2
+- Colocar íconos en el modal en lugar de texto.
+- Se creó una sección para los filtros para que haya jerarquía
+- Se cambió el fondo por una imagen para hacer la interfaz más amigable.
+
+* Test 3
+- Oscurecer el fondo.
+- Incluir el filtro de región
+- Aumentar tamaño de fuente de tipo.
+- Incrementar el tamaño de la barra de búsqueda.
+
+
+### 7. Proyecto final:
+
+* [Visitar Pokémon plus]()
+
+### 8. Creador por:
+
+* [Yerina Barrientos](https://github.com/YerinaLab13)
+* [Francesca Tiravantti](https://github.com/Fran2304)
+
+----------------
+
+
 # Data Lovers
 
 ## Índice
@@ -79,52 +241,52 @@ usuario necesita.
 
 ### HTML y CSS
 
-* [ ] [Uso de HTML semántico.](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-* [ ] Uso de selectores de CSS.
-* [ ] Construir tu aplicación respetando el diseño realizado (maquetación).
-* [ ] [Uso de flexbox en CSS.](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [x] [Uso de HTML semántico.](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
+* [x] Uso de selectores de CSS.
+* [x] Construir tu aplicación respetando el diseño realizado (maquetación).
+* [x] [Uso de flexbox en CSS.](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ### DOM y Web APIs
 
-* [ ] Uso de selectores del DOM.
-* [ ] Manejo de eventos del DOM.
-* [ ] [Manipulación dinámica del DOM.](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n)
+* [x] Uso de selectores del DOM.
+* [x] Manejo de eventos del DOM.
+* [x] [Manipulación dinámica del DOM.](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n)
 (appendChild |createElement | createTextNode| innerHTML | textContent | etc.)
 
 ### JavaScript
 
-* [ ] Uso de condicionales (if-else | switch | operador ternario)
-* [ ] Uso de bucles (for | for..in | for..of | while)
-* [ ] Uso de funciones (parámetros | argumentos | valor de retorno)
-* [ ] Manipular arrays (filter | map | sort | reduce)
-* [ ] Manipular objects (key | value)
-* [ ] Uso ES modules ([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+* [x] Uso de condicionales (if-else | switch | operador ternario)
+* [x] Uso de bucles (for | for..in | for..of | while)
+* [x] Uso de funciones (parámetros | argumentos | valor de retorno)
+* [x] Manipular arrays (filter | map | sort | reduce)
+* [x] Manipular objects (key | value)
+* [x] Uso ES modules ([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 | [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
-* [ ] Diferenciar entre expression y statements.
-* [ ] Diferenciar entre tipos de datos atómicos y estructurados.
+* [x] Diferenciar entre expression y statements.
+* [x] Diferenciar entre tipos de datos atómicos y estructurados.
 
 ### Testing
 
-* [ ] [Testeo unitario.](https://jestjs.io/docs/es-ES/getting-started)
+* [x] [Testeo unitario.](https://jestjs.io/docs/es-ES/getting-started)
 
 ### Estructura del código y guía de estilo
 
-* [ ] Organizar y dividir el código en módulos (Modularización)
-* [ ] Uso de identificadores descriptivos (Nomenclatura | Semántica)
-* [ ] Uso de linter (ESLINT)
+* [x] Organizar y dividir el código en módulos (Modularización)
+* [x] Uso de identificadores descriptivos (Nomenclatura | Semántica)
+* [x] Uso de linter (ESLINT)
 
 ### Git y GitHub
 
-* [ ] Uso de comandos de git (add | commit | pull | status | push)
-* [ ] Manejo de repositorios de GitHub (clone | fork | gh-pages)
-* [ ] Colaboración en Github (branches | pull requests | |tags)
+* [x] Uso de comandos de git (add | commit | pull | status | push)
+* [x] Manejo de repositorios de GitHub (clone | fork | gh-pages)
+* [x] Colaboración en Github (branches | pull requests | |tags)
 
 ### UX
 
-* [ ] Diseñar la aplicación pensando y entendiendo al usuario.
-* [ ] Crear prototipos para obtener feedback e iterar.
-* [ ] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
-* [ ] Planear y ejecutar tests de usabilidad.
+* [x] Diseñar la aplicación pensando y entendiendo al usuario.
+* [x] Crear prototipos para obtener feedback e iterar.
+* [x] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
+* [x] Planear y ejecutar tests de usabilidad.
 
 ## 4. Consideraciones generales
 
@@ -437,22 +599,22 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 
 ## 9. Checklist
 
-* [ ] Usa VanillaJS.
-* [ ] No hace uso de `this`.
-* [ ] Pasa linter (`npm run pretest`)
-* [ ] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+* [x] Usa VanillaJS.
+* [x] No hace uso de `this`.
+* [x] Pasa linter (`npm run pretest`)
+* [x] Pasa tests (`npm test`)
+* [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
   lines y branches.
-* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
-* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+* [x] Incluye _Definición del producto_ clara e informativa en `README.md`.
+* [x] Incluye historias de usuario en `README.md`.
+* [x] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
   `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+* [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
   en `README.md`.
 * [ ] Incluye link a Zeplin en `README.md`.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
+* [x] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
-* [ ] UI: Es _responsive_.
+* [x] UI: Muestra lista y/o tabla con datos y/o indicadores.
+* [x] UI: Permite ordenar data por uno o más campos (asc y desc).
+* [x] UI: Permite filtrar data en base a una condición.
+* [x] UI: Es _responsive_.
