@@ -159,7 +159,7 @@ list.addEventListener("change", () => {
 
     const listPoke = document.querySelectorAll(".poke");
     openModal(listPoke);
-    
+                                             
 });
 
 // ------------------- Función ordenar pokemones alfabéticamente ---------------------
