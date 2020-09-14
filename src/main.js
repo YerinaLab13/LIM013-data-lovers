@@ -1,6 +1,6 @@
 import { filteredPokemon, orderPokemonUpward, filteredName, epsfunction, filterGeneration, calculation } from "./data.js"; //fijo
 // import data from './data/lol/lol.js';
-import data from "./data/pokemon/pokemon.js"; //fijo
+import data from './data/pokemon/pokemon.js'; //fijo 
 // import data from './data/rickandmorty/rickandmorty.js';
 
 const allPokemon = data.pokemon;
@@ -47,10 +47,10 @@ function showInfoPokemon(e) {
             </div>             
         `
     }
-    const quickMovesPoke = poke["quick-move"];
+    const quickMovesPoke = poke['quick-move'];
     const statsQuickMove = quickMovesPoke.map(epsTemplateFunction).join("");
 
-    const attackMoves = poke["special-attack"];
+    const attackMoves = poke['special-attack'];
     const statsAttackMove = attackMoves.map(epsTemplateFunction).join("");
 
     //--------------- reduce pc ----------------------
