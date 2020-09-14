@@ -1,4 +1,4 @@
-# Pokémon Plus
+# Pokémon Plus 
 
 ## Índice
 
@@ -27,91 +27,97 @@ Para este procesaron se realizaron entrevistas y encuestas para conocer las nece
 
 ### 4. Historias de usuario
 
-* Historia 1
+_**Historia 1**_
+
 Yo como jugador pokémon quiero saber el nombre y ver la imagen del pokémon
 
-Criterios de aceptación
+_Criterios de aceptación:_
 - Ver imagen de pokémon, el nombre, número de orden.
 - Ver todos los pokemones
 
-Definición de terminado
+_Definición de terminado:_
 
-La interfaz es responsive
-Se usa método map
-Se muestra las propiedades name, num, img en la interfaz
-Se usa template strings
-Se tarbaja con el pokemon.js
+- La interfaz es responsive
+- Se usa método map
+- Se muestra las propiedades name, num, img en la interfaz
+- Se usa template strings
+- Se tarbaja con el pokemon.js
 
 
-* Historia 2
+_**Historia 2**_
+
 Yo como jugador Pokémon Go quiero ver los pokémons por tipo de elemento para escogerlos en la batallas
 
-* Criterios de aceptación:
+ _Criterios de aceptación:_
 - Usuario debe ver al inicio todos los pokémons
 - El usuario puede ver los tipos de pokémon que existen a través de un lista desplegable
 - El usuario selecciona el tipo de pokémon que existe
 - El usuario puede ver todos lo pokémon de ese tipo
 - Si el usuario selecciona "All" verá nuevamente todos los Pokemons
 
-Definición de terminado
+_Definición de terminado:_
 
-La interfaz es responsive
-Lista despleglable
-El código pasa los test unitarios (is a function, type filtered)
-Se usa el método filter
-Se usa el metodo map
+- La interfaz es responsive
+- Lista despleglable
+- El código pasa los test unitarios (is a function, type filtered)
+- Se usa el método filter
+- Se usa el metodo map
 
-* Historia 3
+_**Historia 3**_
+
 Yo como jugador Pokémon Go quiero ver los pokémons por región para conocer su origen
 
-Criterios de aceptación:
+_Criterios de aceptación:_
+
 - Usuario debe ver al inicio todos los pokémons
 - El usuario puede ver las regiones que existen a través de un lista desplegable
 - El usuario selecciona la región que desea
 - El usuario puede ver todos lo pokémon de esa región
 - Si el usuario selecciona "Todas" verá nuevamente todos los Pokemons
 
-Definición de terminado
+_Definición de terminado:_
 
-La interfaz es responsive
-Lista despleglable
-El código pasa los test unitarios (is a function, type filtered)
-Se usa el método filter
-Se usa el metodo map
+- La interfaz es responsive
+- Lista despleglable
+- El código pasa los test unitarios (is a function, type filtered)
+- Se usa el método filter
+- Se usa el metodo map
 
-* Historia 4
+_**Historia 4**_
+
 Yo como jugador de Pokémon Go quiero ver los pokémon ordenados alfabéticamente
 
-Criterios de aceptación:
+_Criterios de aceptación:_
 - Usuario escoge si es descendente (a-z) o ascendente (z-a) 
 - Usuario visualiza los pokémon en el orden escogido
 - Si el usuario no selecciona ninguno los pokemon deben de aparecer por orden de número
 
-Definición de terminado
+_Definición de terminado:_
 
-Definición de terminado
-La interfaz es responsive
-Pasa 2. Alfabeticamente ascendente y descendente
-Test sort
-Lista desplegable de a-z y z-a.
+- La interfaz es responsive
+- Pasa 2. Alfabeticamente ascendente y descendente
+- Test sort
+- Lista desplegable de a-z y z-a.
 
-* Historia 5
+ _**Historia 5**_
+
 Yo como jugador quiero ver la informacion de cada pokemon
 
-Criterios de aceptación:
--La información figurará cuando se dé clic a la imagen del pokémon
--Debería ver el nombre del pokémon.
--Se puede visualizar el tipo de pokemon.
--Se puede visualizar información básica del pokémon (egg, weight, heigth)
--Se puede visualizar la suma de (base-attack, base-damage,stamina, hp, cp)
--Se puede visualizar el Eps por cada movimiento (quick move y special Attack)
--Imagen del pokémon
+_Criterios de aceptación:_
 
-Definición de terminado
+- La información figurará cuando se dé clic a la imagen del pokémon
+- Debería ver el nombre del pokémon.
+- Se puede visualizar el tipo de pokemon.
+- Se puede visualizar información básica del pokémon (egg, weight, heigth)
+- Se puede visualizar la suma de (base-attack, base-damage,stamina, hp, cp)
+- Se puede visualizar el Eps por cada movimiento (quick move y special Attack)
+- Imagen del pokémon
 
-La interfaz es responsive
-Hacer el test
-La información se desplegará en un modal
+_Definición de terminado:_
+
+- La interfaz es responsive
+- Hacer el test
+- La información se desplegará en un modal
 
 ### 5. Prototipado
 
@@ -122,6 +128,9 @@ La información se desplegará en un modal
 
 ![](src/imagenes/Android-1.png)
 ![](src/imagenes/Android-2.png)
+
+_Prototipo de alta fidelidad_
+
 ![](src/imagenes/Desktop-1.png)
 ![](src/imagenes/Desktop-2.png)
 ![](src/imagenes/Android-3.png)
@@ -152,7 +161,7 @@ La información se desplegará en un modal
 
 * [Visitar Pokémon plus]()
 
-### 8. Creador por:
+### 8. Creado por:
 
 * [Yerina Barrientos](https://github.com/YerinaLab13)
 * [Francesca Tiravantti](https://github.com/Fran2304)
