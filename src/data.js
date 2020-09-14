@@ -14,7 +14,6 @@ export const orderPokemonUpward = (myArray) => {
         if (x > y){return 1;}
         return 0;
     });
-
     //console.log(myArray);
     return myArray;
 };
@@ -32,8 +31,6 @@ export const filteredName = (data,name) => {
    const myArray= data.filter((myObject)=>{
     
     return myObject.generation.name.includes(selectGeneration);
-     
-  
    })
    return myArray;
  }
@@ -59,11 +56,8 @@ export const calculation = (myObject) => {
   
 
 
-//export const 
-/*
 
-
-export const orderPokemonDownward = (myArray) => {
+/*export const orderPokemonDownward = (myArray) => {
   myArray.sort(function(a,b){
         let x = a.name;
         let y = b.name;
@@ -75,9 +69,9 @@ export const orderPokemonDownward = (myArray) => {
     //console.log(myArray);
     return myArray;
 };
-*/
+
 
 // estas funciones son de ejemplo
 export const anotherExample = () => {
   return 'OMG';
-};
+};*/
