@@ -160,19 +160,6 @@ list.addEventListener('change', () => {
 });
 // ------------------- Función ordenar pokemones alfabéticamente ---------------------
 
-/*function orderPokemon(myArray) {
-    myArray.sort(function(a,b){
-          let x = a.name;
-          let y = b.name;
-          if (x < y){return -1;}
-          if (x > y){return 1;}
-          return 0;
-      });
-  
-      console.log(myArray);
-      return myArray;
-  }*/
-
 let orderList = document.getElementById('orderList');
 orderList.addEventListener('change', () => {
     let selectType = list.value;
